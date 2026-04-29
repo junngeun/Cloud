@@ -9,5 +9,13 @@ const conn = mysql.createConnection({
     database : 'cloud_study_teacher_KJY'
 })
 
-conn.connect()
+// conn.connect()
+
+conn.connect((err) => {
+    if (err) {
+        console.error('DB 연결 실패:', err)  // 에러 원인 확인
+    } else {
+        console.log('DB 연결 성공!')
+    }
+})
 module.exports = conn;
