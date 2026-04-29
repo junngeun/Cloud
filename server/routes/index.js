@@ -17,6 +17,7 @@ router.post('/getData', (req,res)=>{
     let sql =  "INSERT INTO DATA_TABLE VALUES (?)"
     
     conn.query(sql, [req.body.data], (err,rows)=>{
+        console.log('err', err)   // 에러 내용 추가
         console.log('rows', rows)
         if (rows) {
             // 요청에 대한 응답을 프론트로 
